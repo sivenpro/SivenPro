@@ -1,0 +1,65 @@
+[
+    {
+        "id": "1",
+        "id_servicio": "102643",
+        "descripcion": "GS-CCP AC en matrices interiores 3\"",
+        "tarifado_uf": "1.76",
+        "grupo_art": "111001001",
+        "un_medida": "un",
+        "estado_servicio": "Activo"
+    },
+    {
+        "id": "2",
+        "id_servicio": "102644",
+        "descripcion": "GS-CCP AC en matrices interiores 4\"",
+        "tarifado_uf": "1.87",
+        "grupo_art": "111001001",
+        "un_medida": "un",
+        "estado_servicio": "Activo"
+    },
+    {
+        "id": "3",
+        "id_servicio": "102645",
+        "descripcion": "GS-CCP AC en matrices inter. menor a 2\"",
+        "tarifado_uf": "1.65",
+        "grupo_art": "111001001",
+        "un_medida": "un",
+        "estado_servicio": "Activo"
+    },
+    {
+        "id": "4",
+        "id_servicio": "102646",
+        "descripcion": "GS-CCP Acera de baldosa",
+        "tarifado_uf": "0.99",
+        "grupo_art": "111004001",
+        "un_medida": "un",
+        "estado_servicio": "Activo"
+    },
+    {
+        "id": "5",
+        "id_servicio": "102647",
+        "descripcion": "GS-CCP acera de baldosa",
+        "tarifado_uf": "0.99",
+        "grupo_art": "111004001",
+        "un_medida": "un",
+        "estado_servicio": "Activo"
+    },
+    {
+        "id": "6",
+        "id_servicio": "102648",
+        "descripcion": "GS-CCP Acera de baldosa 40 x 40 cm.",
+        "tarifado_uf": "0.88",
+        "grupo_art": "111004001",
+        "un_medida": "un",
+        "estado_servicio": "Activo"
+    },
+    {
+        "id": "7",
+        "id_servicio": "102649",
+        "descripcion": "GS-CCP Acera de concreto 0,07 espesor",
+        "tarifado_uf": "0.66",
+        "grupo_art": "111004001",
+        "un_medida": "un",
+        "estado_servicio": "Activo"
+    }
+]

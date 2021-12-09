@@ -1,0 +1,162 @@
+@media print {
+
+    footer { 
+        display: none !important;
+        position: absolute;
+        bottom: 0;
+        page-break-after: always;
+    }
+
+    .card-icon, .buttons-excel, .buttons-pdf, #btn_pagado, .agrega_serv, .editarS, .eliminar_servicio, .editarM, .eliminar_material, .agrega_ep, .importa_serv_excel, .importa_mat_excel, .agrega_mat {
+        display: none !important; 
+    }
+
+    #la_obs_general, #btn_obs_general, #btn_tomar_ep, #Lista_serv_EP_info, #Lista_mat_EP_info, #Lista_serv_EP_previous, #Lista_serv_EP_next, #btn_cancelar, .observacion, .observacion_mat, #btn_enviar_factura, #btn_aprobar, #btn_rechazar, #btn_autorizar, #btn_imprimir {
+        display: none !important;
+    }
+
+    body {
+        background: #ffffff !important;
+        overflow: hidden;
+        position: absolute;
+        display: inline;
+    }
+
+    #titulo_superior{
+        font-size: 20pt;
+    }
+
+    #titulo_servicios, #titulo_materiales{
+        font-size: 16pt;
+        margin-bottom: -40px;
+    }
+
+    #id_ed, #label_n_ep{
+        margin-top: -60px;
+        font-size: 16pt;
+    }
+
+    #label_emision, #fecha_emision {
+        margin-top: 0px;
+        margin-bottom: 28px;
+    }
+
+    #fecha_emision {
+        font-size: 18px;
+        margin-left: 0px;
+    }
+
+    #form_imprimir{
+        margin-top: -30px;
+        margin-bottom: -30px;
+    }
+
+    input[type="text"] {
+        font-size:16px;
+        margin-bottom: 1px;
+    }
+
+    input[type=number] {
+        font-size:16px;
+        margin-bottom: 1px;
+    }
+
+    .filter-option-inner-inner {
+        font-size: 16px;
+        margin-top: -13px;
+        margin-bottom: -20px;
+    }
+
+    #labeli, #label_factura, #label_fecha_pago{
+        font-size: 18px;
+        margin-top: -6px;
+    }
+
+    #btn_enviar_rev, #guardar_formulario, #btn_enviar_a_fact, #label_adjunto, #btn_adjuntar{
+        display: none !important;
+    }
+
+    #Lista_serv_EP, #Lista_mat_EP{
+        margin-top: -65px;
+        margin-bottom: -30px;
+    }
+
+    #listaMateriales{
+        display: block !important;
+        margin-bottom: -30px;
+    }
+
+    #listaServicios{
+        display: block !important;
+        margin-top: -70px;
+        margin-bottom: -20px;
+    }
+
+    .dropdown-toggle:after {
+        display: none !important;
+    }
+
+    .alert, .alert-info , .alert-with-icon{
+        display: none !important;
+    }
+    
+    table.dataTable thead .sorting_asc:before,table.dataTable thead .sorting_desc:after {
+        display: none !important;
+    }
+
+    table.dataTable thead .sorting:before,table.dataTable thead .sorting_asc:before,table.dataTable thead .sorting_asc_disabled:before,table.dataTable thead .sorting_desc:before,table.dataTable thead .sorting_desc_disabled:before {
+        display: none !important;
+    }
+
+    table.dataTable thead .sorting:after,table.dataTable thead .sorting_asc:after,table.dataTable thead .sorting_asc_disabled:after,table.dataTable thead .sorting_desc:after,table.dataTable thead .sorting_desc_disabled:after {
+        display: none !important;
+    }
+
+    table.dataTable thead .sorting_asc:before,table.dataTable thead .sorting_desc:after {
+        display: none !important;
+    }
+
+    .table-striped>tbody>tr:nth-of-type(odd) {
+        font-size: 16px;
+    }
+
+    #listita {
+        margin-top: -120px;
+    }
+
+    #lista_asignados, #tabla_serv_vacia, #tabla_mat_vacia{
+        display: none !important;
+    }
+
+    .material-datatables .dataTables_paginate .pagination .paginate_button .page-link {
+        display: none !important;
+    }
+
+    tfoot.totaliz{
+        margin-top: 10px;
+        font-size: 20px;
+    }
+
+    #div_padre_n_orden, #div_padre_hes, #div_padre_uf_pago{
+        display: none !important;
+    }
+
+    #cuadro_contr, #cuadro_ins, #cuadro_jef{
+        margin-top: -60px;
+    }
+
+    #label_firma_contr, #cargo_contr, #admin3, #fecha_contr, #label_firma_ins, #cargo_ins, #admin, #fecha_ins, #label_firma_jef, #cargo_jef, #admin2, #fecha_jef{
+        margin-top: -30px;
+        margin-bottom: -25px;
+    }
+
+    .col-print-1 {width: 50%;  float: left;}
+    .col-print-2 {width: 40%; float: left; margin-left: 30px;}
+    .col-print-3 {width: 40%; float: left;}
+    
+    @page{
+        size: letter;
+        margin-top: 2.5cm;
+        margin-bottom: 3.0cm;
+    }
+}
