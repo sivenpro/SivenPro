@@ -328,6 +328,17 @@ var cargaModalNotificaciones = function(){
   });
 }
 
+var cargaContadorNotificaciones = function(){
+  $.ajax({
+    url: 'notificaciones/contador_notificaciones.php',
+    type: 'POST',
+    success: function(data){
+      var json_info = JSON.parse( data );
+      $(".contador-rojo").html(json_info['data'][0].cantidad);
+    }
+  });
+}
+
 var descartarNotificacion = function(id_notificacion){
   var id_noti = id_notificacion;
   $.ajax({
@@ -335,8 +346,8 @@ var descartarNotificacion = function(id_notificacion){
     data: {'id_notificacion': id_noti},
     type: 'POST',
     success: function(data){
-      cuentaNotificaciones();
       cargaModalNotificaciones();
+      cargaContadorNotificaciones();
     }
   });
 }
