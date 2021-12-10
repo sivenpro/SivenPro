@@ -171,6 +171,8 @@ var obtener_id_eliminar = function(tbody, table) {
   $(tbody).on("click", "button.eliminar", function(){
     var data = table.row( $(this).parents("tr")).data();
     var id=$("#frmeliminar #idel").val( data.id_guia );
+    var id_productoElim = $("#idproductoElim").val( data.id_producto );
+    var cantidadElim = $("#cantidadElim").val( data.cantidad );
     var descripcion= data.nombre_producto;
     $("#a-eliminar").text(descripcion);
   });
@@ -180,11 +182,14 @@ var obtener_id_eliminar = function(tbody, table) {
 var eliminar = function() {
   $("#eliminar-it").on("click", function() {
     var id_eliminar = $("#frmeliminar #idel").val(),
-        opcion = $("#frmeliminar #opcioneliminar").val();        
+        opcion = $("#frmeliminar #opcioneliminar").val();
+        id_productoElim = $("#frmeliminar #idproductoElim").val();
+        cantidadElim = $("#frmeliminar #cantidadElim").val();
     $.ajax({
       method:"POST",
       url: "modulos/inventario/guia_despacho/update.php",
-      data:{"id": id_eliminar, "opcion": opcion}
+      data:{"id": id_eliminar, "opcion": opcion, 
+            "id_productoElim": id_productoElim, "cantidadElim": cantidadElim}
     }).done(function(info) {
       var json_info = JSON.parse( info );
       mostrar_mensaje( json_info );
