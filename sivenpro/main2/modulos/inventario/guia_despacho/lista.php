@@ -114,6 +114,8 @@
         <form id="frmeliminar" action="" method="POST">
             <input type="hidden" id="idel" name="id" value="">
             <input type="hidden" id="opcioneliminar" name="opcion" value="eliminar">
+            <input type="hidden" id="idproductoElim" name="idproductoElim" value="">
+            <input type="hidden" id="cantidadElim" name="cantidadElim" value="">
             <!-- Modal -->
             <div class="modal fade" id="modaleliminar" tabindex="-1" role="dialog" aria-labelledby="modaleliminarLabel">
                 <div class="modal-dialog" role="document">
