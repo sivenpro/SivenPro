@@ -9,7 +9,7 @@
     include("../../../conexion/config/connection.php");
 
     $consulta = "SELECT * FROM id18070131_sivenpro.productos WHERE fecha_venc 
-                BETWEEN curdate() AND date_add(curdate(), interval 7 day) AND estado = 'Activo'";
+                BETWEEN curdate() AND date_add(curdate(), interval 7 day) AND estado = 'Activo' AND cantidad > 0";
     $resultadoC = mysqli_query($conn, $consulta);
     
     while ($fila = mysqli_fetch_assoc($resultadoC)){
