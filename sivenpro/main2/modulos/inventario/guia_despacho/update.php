@@ -14,7 +14,9 @@
 
     $id = mysqli_real_escape_string($conn, $_POST["id"]);
     $id_producto = mysqli_real_escape_string($conn, $_POST["id_producto"]);
+    $id_productoElim = mysqli_real_escape_string($conn, $_POST["id_productoElim"]);
     $cantidad = mysqli_real_escape_string($conn, $_POST["cantidad"]);
+    $cantidadElim = mysqli_real_escape_string($conn, $_POST["cantidadElim"]);
     $tipo_pago = mysqli_real_escape_string($conn, $_POST["tipo_pago"]);
     $opcion = mysqli_real_escape_string($conn, $_POST["opcion"]);
     $informacion = [];
@@ -24,7 +26,7 @@
             modificar($id, $id_producto, $cantidad, $tipo_pago, $conn);
             break;
         case 'eliminar':
-            eliminar($id, $conn);
+            eliminar($id, $id_productoElim, $cantidadElim, $conn);
             break;
         default:
             $informacion["respuesta"] = "OPCION_VACIA";
@@ -62,7 +64,16 @@
     }
 
 
-    function eliminar($id, $conn){
+    function eliminar($id, $id_productoElim, $cantidadElim, $conn){
+        $q_producto = consultaProducto($id_productoElim, $conn);
+
+        if ($q_producto[0] != "" || $q_producto[0] != NULL){
+
+            $query="UPDATE id18070131_sivenpro.productos SET cantidad = cantidad +'$cantidadElim' 
+                    WHERE id_producto = '$id_productoElim'";
+            $resultado = mysqli_query($conn, $query);
+        }
+
         $query="UPDATE id18070131_sivenpro.guia_despacho SET estado='Eliminado' WHERE id_guia='$id'";
         $resultado = mysqli_query($conn, $query);
         verificar_resultado( $resultado );
@@ -110,6 +121,20 @@
         while ($resultado = mysqli_fetch_assoc($ejecuta)){
             if($resultado["cantidad"] != null || $resultado["cantidad"] != ""){
                 array_push($arreglo, $resultado["cantidad"]);
+            }
+        }
+        return $arreglo;
+    }
+
+
+    function consultaProducto($id_productoElim, $conn){
+        $arreglo = array();
+        $consulta = "SELECT * FROM id18070131_sivenpro.productos 
+                     WHERE id_producto='$id_productoElim' AND estado='Activo'";
+        $ejecuta = mysqli_query($conn,$consulta);
+        while ($resultado = mysqli_fetch_assoc($ejecuta)){
+            if($resultado["id_producto"] != null || $resultado["id_producto"] != ""){
+                array_push($arreglo, $resultado["id_producto"]);
             }
         }
         return $arreglo;
