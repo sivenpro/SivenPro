@@ -39,6 +39,7 @@ $("#btn_cancelar2").on("click", function(){
   limpiar_datos();
   listar_productos();
   $('select').selectpicker();
+  $("#name").val("");
 });
 
 
