@@ -21,7 +21,6 @@
   <script src="sivenpro/main2/fnc_log.js" type="text/javascript"></script>
   <!--     Fonts and icons     -->
   <link rel="stylesheet" type="text/css" href="sivenpro/main2/fonts.css" />
-  <link rel="stylesheet" type="text/css" href="sivenpro/main2/ctr.css" />
   <link rel="stylesheet" href="sivenpro/main2/font-awesome.min.css" />
   <!-- Material Dashboard CSS -->
   <link rel="stylesheet" href="sivenpro/main2/assets/css/material-dashboard.min.css?1">
