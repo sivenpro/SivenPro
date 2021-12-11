@@ -26683,3 +26683,13 @@ tfoot.totaliz {
     margin-bottom: -2%;
     margin-left: 3px;
 }
+
+#imagen_g {
+    width: 70% !important;
+    margin-top: -39% !important;
+    margin-bottom: -10% !important;
+}
+
+.pw {
+    -webkit-text-security: disc !important;
+}
