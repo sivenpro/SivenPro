@@ -41,7 +41,7 @@ if(isset($_FILES["name"])){
                         if(empty($filasNoNumericasPrecio)){
                             $filasNoNumericasCantidad = validarFilaNumericaCantidad($sheet, $highestRow);
                             if(empty($filasNoNumericasCantidad)){
-                                $validarDatosExistentes = verificaCodBD($sheet,$highestRow,$conn);
+                                $validarDatosExistentes = verificaCodBD($sheet,$highestRow,$empresa,$conn);
                                 $DatosExistentes = $validarDatosExistentes[0]['encontradas'];
                                 if(empty($DatosExistentes)){
                                    
@@ -174,7 +174,7 @@ function validarFilaNumericaCantidad($sheet, $highestRow){
 }
 
 
-function verificaCodBD($sheet,$highestRow,$conn){
+function verificaCodBD($sheet,$highestRow,$empresa,$conn){
     $tabla = 'productos';
     $campo = 'cod_producto';
     $arregloCod = array();
@@ -191,7 +191,7 @@ function verificaCodBD($sheet,$highestRow,$conn){
     $IDEncontradasEnBdd["encontradas"] = array();
     $IDNoEncontradasEnBdd["no_encontradas"] = array();
     foreach ($arregloCodconRow as $dato){
-        $consultaSQL = ejecutarConsultaSelectMysqlWhere($conn,$tabla,$campo,$dato['cod_producto']);
+        $consultaSQL = ejecutarConsultaSelectMysqlWhere($conn,$tabla,$campo,$dato['cod_producto'],$empresa);
         if(!empty($consultaSQL)){
             $arregloConjuntoID = array_merge($arregloConjuntoID,$consultaSQL);
         }
@@ -213,9 +213,9 @@ function verificaCodBD($sheet,$highestRow,$conn){
 }
 
 
-function ejecutarConsultaSelectMysqlWhere($conn,$tabla,$campo,$where){
+function ejecutarConsultaSelectMysqlWhere($conn,$tabla,$campo,$where,$empresa){
     $arreglo = array();
-    $consulta = "SELECT $campo as valor FROM $tabla WHERE $campo = '$where' AND estado = 'ACTIVO'";
+    $consulta = "SELECT $campo as valor FROM $tabla WHERE $campo = '$where' AND estado = 'ACTIVO' AND empresa='$empresa'";
     // echo $consulta;
     $ejecuta = mysqli_query($conn,$consulta);
     while ($resultado = mysqli_fetch_assoc($ejecuta) ){
