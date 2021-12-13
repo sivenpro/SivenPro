@@ -9,7 +9,7 @@
 	$username = mysqli_real_escape_string($conn,$_POST['username']);
 	$password = mysqli_real_escape_string($conn,$_POST['password']);
 
-	$query = "SELECT * FROM	id18070131_sivenpro.usuarios
+	$query = "SELECT * FROM	usuarios
 			  WHERE	nombre = '$username'
 			  AND pass = '$password'
 			  AND estado = 'ACTIVO'";
@@ -24,6 +24,7 @@
 		$_SESSION['interno_id'] = $row['id_usuario'];	// id del usuario
 		$_SESSION['interno_usuario'] = $row['nombre'];	//usuario conectado
 		$_SESSION['interno_avatar'] = $row['avatar'];	// avatar del usuario
+		$_SESSION['interno_empresa'] = $row['empresa'];	// empresa del usuario	
 		$_SESSION['interno_direccion'] = $row['direccion'];	// direccion del usuario		
 		$_SESSION['interno_email'] = $row['correo'];	// correo electronico de usuario
 		$_SESSION['interno_nombre'] = $row['nombre_completo'];	// nombre de usuario
@@ -31,7 +32,7 @@
 		$perfil_asociado = $_SESSION['tipo_perfil'];
 		
 		$query = "SELECT *
-			  	  FROM id18070131_sivenpro.perfiles
+			  	  FROM perfiles
 			  	  WHERE id_perfil = '$perfil_asociado'";
 
 		$result = mysqli_query($conn, $query);
@@ -40,6 +41,7 @@
 		// 0 no tiene acceso
 		// 1 tiene acceso
 
+		$_SESSION['sivenpro_admin_general'] = $row['admin_general']; //administrador general
 		$_SESSION['sivenpro_admin'] = $row['administrador']; //administrador 
 		$_SESSION['sivenpro_bodeguero'] = $row['bodeguero']; // acceso bodeguero 		
 		$_SESSION['sivenpro_contador'] = $row['contador']; //acceso contador 
