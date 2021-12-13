@@ -53,6 +53,10 @@ function load_content(elemento) {
             $("#cargacontent").load("modulos/administracion/usuarios/usuarios.php");
             titulo = "Usuarios";
             break;
+        case "listaEmpresas":
+            $("#cargacontent").load("modulos/administracion/empresas/lista.html");
+            titulo = "Empresas";
+            break;
         case "Dashboard":
             $("#cargacontent").load("modulos/dashboard/dashboard.php");
             titulo = "Dashboard";
